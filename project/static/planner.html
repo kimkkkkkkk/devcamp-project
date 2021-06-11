@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style type="text/css">
+
+
+#wrapper{
+    width: 1200px;
+    height: 800px;
+    background: rgb(255, 247, 238);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+}
+
+#top-banner{
+    width: 900px;
+    height: 100px;
+    background: rgb(255, 250, 244);
+    float: left;
+    
+}
+ #navi{
+     text-align: center;
+     
+ }   
+ #navi span{
+     font-size: 30px;
+     
+ }
+ #bt_prev, #bt_next{
+    width: 50px;
+    height: 35px;
+    background: rgb(255, 234, 211);
+    color: #4f4f4f;
+    border: 1px solid #4f4f4f;
+ }
+ #bt_prev{
+     float: left;
+     left: 0px;
+     border: 1px solid #4f4f4f;
+ }
+ #bt_next{
+    position: absolute;
+    right: 0px;
+   border: 1px solid #4f4f4f;
+
+ }
+ #day_area{
+    width:900px;
+     float: left;
+     position: relative;
+ }
+
+#side{
+     width: 300px;
+     height: 800px;
+     float: left;
+     background:rgb(255, 234, 211);
+     position: relative;
+}
+
+.menu{
+    width: 270px;
+    height: 220px;
+    background-color: rgb(255, 234, 211);
+    position: absolute;
+    text-align: center;
+    left: 15px;
+    bottom: 140px;
+
+}
+
+.menu img{
+    width: 55px;
+    height: 60px;
+    border:1px solid gray;
+    display: inline-block;
+    text-align: center;
+}
+
+#side input[type="text"]{
+    width: 90%; 
+}
+#side textarea{
+    width: 90%;   
+    height: 200px;
+}
+#side button{
+    border: 1px solid;
+    border-radius: 0.3em;
+    
+    
+}
+
+
+
+
+</style>
+<script src="./js/DateBox.js"></script>
+<script src="./js/DayBox.js"></script>
+<script src="./js/lib.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+var cellSize_w=125; // 가로*세로 100인 사각형
+var cellSize_h =90; // 가로*세로 100인 사각형
+var wrap;
+var dayArray=["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
+var boxArray=[]; // 42개의 날짜 박스를 접근하기 위한 배열
+var d; // 현재 사용중인 날짜 객체
+var icon=["a.png","b.png","c.png","d.png","e.png",
+                "f.png","g.png","h.png","i.png","j.png",
+                "k.png","l.png","m.png","n.png","o.png",
+                "p.png","q.png","r.png","s.png","t.png"];
+var img_name;
+var iconArray=[];
+var d_date, t_title, c_content; // 날짜 ,제목, 내용
+var selectedIndex=0;
+var editable=true;
+
+
+function regist(){
+
+
+    var selectedIndex = document.getElementById("div_index").value; //내가 선택한 날짜의 박스안의 div의  id 
+    var dateBox = boxArray[selectedIndex];
+    
+    alert(selectedIndex);
+
+    dateBox.date=document.getElementById("d_date").value;
+    dateBox.title=document.getElementById("t_title").value;
+    dateBox.content=document.getElementById("c_content").value;
+
+    var str =dateBox.div.innerText
+    
+    dateBox.div.innerHTML=str+"<br>"+dateBox.title+"<br>"+dateBox.content;
+ 
+
+    
+    //띠 생성 
+
+    //현재 편집중인 날짜가 달력 박스 중 누구인지 알아맞추기 !!
+    for(var i=0;i<boxArray.length;i++){
+        if(boxArray[i].innerText == document.getElementById("t_title").value){
+            alert(i+"번째에서 "+boxArray[i].innerText+"발견");
+        }
+    }
+
+    // $("form").attr("action", "/planner");
+    // $("form").attr("method", "post");
+    // $("form").submit();
+}
+
+
+
+function Del(){
+    var selectedIndex = document.getElementById("div_index").value; 
+    var selectedElement = document.getElementById(selectedIndex);
+    var dateBox = boxArray[selectedIndex];
+
+    if(confirm("삭제하시겠습니까?")==true){
+        const date = dateBox.div.innerText.split('\n')[0].trim();
+        dateBox.div.innerText = date;
+        dateBox.div.style.backgroundColor='#ffffff';    
+        dateBox.colorFlag = false; //색상 적용  
+
+        // selectedElement.remove();
+         // dateBox.removeChild(child);
+        // day_area.splice(selectedIndex, 1);
+    }
+}
+
+function init(){
+    wrap=document.getElementById("wrap"); 
+    createDays(); // 요일 박스 생성 기존에만들어놓은 박스 넣을거임
+    createDate(); // 날짜 박스 생성
+    createIcon(); // stamp 생성
+    getCurrentDate(); //달력제목으로 오늘 날짜를 기본적으로 출력하자! 
+    //regist();
+}
+
+// 현재 날짜 구해오기
+function getCurrentDate(){
+    d = new Date();
+    //출력할때는 언제나 1을 더해서 출력하자
+    printDate(); // 날짜 출력
+
+}
+
+
+//각월의 시작 요일
+function getFirstDayOfMonth(year, month){
+    
+    var d = new Date(year, month, 1); // 넘겨받은 매개변수로 날짜만듬
+    return d.getDay(); //요일 반환!!
+}
+
+//각월이 몇일까지 있는지 
+function getLastDate(year , month){
+    var d = new Date(year, month+1,0);
+    return d.getDate(); // 말일의 날짜 변환
+}
+
+function createWrap(){
+    //wrap.style.width=cellSize*7+"px";
+    //wrap.style.height=120+120+cellSize*6+"px";
+    wrap.style.margin="auto";
+    wrap.style.overflow="hidden";
+    wrap.style.position="relative";
+
+    //월 선택 컨트롤러
+   
+    
+}
+
+
+
+//일.. 월.. 화.. 박스 생성
+function createDays(){
+    for(var i=0;i<dayArray.length;i++){
+        //constructor(container, width, height,쓰고 싶은 글씨, 색상)
+        var box =new DayBox(document.getElementById("day_area"),cellSize_w,cellSize_h, dayArray[i], "rgb(255, 234, 211)"); //relative여서 옆으로 쫙 붙음
+    }
+}
+
+//해당 월의 1일~ 끝일까지 날짜 박스 생성
+function createDate(){
+    //constructor(container, width, height,쓰고 싶은 글씨, 색상)
+    for(var i=0; i<dayArray.length*6;i++){
+        var dateBox=new DateBox(document.getElementById("day_area"),cellSize_w,cellSize_h, i, "#ffffff");
+        
+         boxArray.push(dateBox);
+    }
+}
+
+function setTitle(){ 
+    var yy= d.getFullYear(); // 오늘의 연도
+    var mm=d.getMonth(); //오늘의 월 0부터 ~11까지
+    var str = yy+"년 "+getZeroString(mm+1)+"월";
+
+  
+    document.getElementById("cal_title").innerText=str;
+}
+
+//이전월
+function prevMonth(){
+    d.setDate(1); //1일로 초기화
+    d.setMonth(d.getMonth()-1);//현재 사용중인 월에 -1
+    printDate();
+}
+
+// 다음월
+function nextMonth(){
+    //기존 객체를 이용하기 때문에, 날짜도 함께 변경
+    d.setDate(1)
+    d.setMonth(d.getMonth()+1);//현재 사용중인 월에 +1 ,월증가
+    printDate();
+}
+
+//현재 화면에 날짜칸 div에 출력된 텍스트를 지우기
+function resetDate(){
+    for(var i =0;i<boxArray.length;i++){
+        boxArray[i].div.innerText=""; //초기화
+        
+    }
+}
+
+//날짜를 출력하는 함수
+function printDate(){
+    resetDate(); // 싹 지우기
+    setTitle();
+
+    var n=1;
+    for(var i=0; i<boxArray.length;i++){
+
+        // i가 각 월의 시작요일
+        if(i >=getFirstDayOfMonth(d.getFullYear() , d.getMonth())){
+           // 각 월의 말일까지
+            if(n <=getLastDate(d.getFullYear(), d.getMonth())){
+                boxArray[i].div.innerText=n+"일"; 
+                n++;
+            }
+        }
+    }
+}
+
+
+
+
+//도장찍기
+function stamp(obj){ // obj 는 도장 이미지가 붙을 div 
+    var img =document.createElement("img");
+    img.src=img_name;
+    img.style.width=40+"px";
+    img.style.height=40+"px";
+    img.style.position="relative";
+    obj.appendChild(img);
+}
+
+function createIcon(){
+    for(var i=0;i<icon.length;i++){
+        var img=document.createElement("img");
+        img.src="./images/sticker/"+icon[i];
+        document.querySelector(".menu").appendChild(img);
+        img.addEventListener("click", function(){
+            //alert(this.src);
+            img_name=this.src;
+            editable=false; //편집모드 해제 
+            pointer(iconArray.indexOf(this));
+        });
+        //배열에 담아놓으면 나중에 써먹을 수 있다 
+        iconArray[i]=img;
+    }
+}
+
+//모든 아이콘을 댓항으로, 선택효과 주기 
+function pointer(selectedIndex){ //선택한 이미지 정보 
+    //alert("당신이 선택한 이미지의 배열내에서의 위치는 "+selectedIndex);
+
+    for(var i=0;i<iconArray.length;i++){
+        var img = iconArray[i];
+        if(i==selectedIndex){
+            img.style.border="2px solid #ff9100";
+        }else{
+            img.style.border="0px";
+        }
+    }
+}
+
+function choiceBg(color){
+    alert("당신이 선택한 div의 아이디는"+color);
+    var index = document.getElementById("div_index").value;
+    var obj=boxArray[index];
+    obj.div.style.backgroundColor=color;    
+    obj.colorFlag=true; //색상 적용  
+}
+
+
+window.addEventListener("load", function(){
+    init();
+});
+</script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="side">
+        <p>
+           <!-- <form> -->
+               
+                <input type="hidden" id="div_index">
+                <input type="hidden" id="bg">
+                <input type="hidden" id="member_id" value="9">
+                <input type="hidden" name="yy" id="yy" value="2021">
+                <input type="hidden" name="mm" id="mm" value="3">
+                <p>
+                <input type="text" id="d_date" name="dd" placeholder="날짜">
+                <br> 
+                <input type="text" id="t_title" name="title" placeholder="제목"> 
+                <br>
+                <textarea placeholder="내용입력" id="c_content" name="content"></textarea>
+                <br>
+                <input type="button" value="RED" style="background:red;"                        onClick="choiceBg(this.style.backgroundColor)">
+                <input type="button" value="BLUE" style="background:rgb(0, 182, 223);"   onClick="choiceBg(this.style.backgroundColor)">
+                <input type="button" value="GREEN" style="background:green;"                      onClick="choiceBg(this.style.backgroundColor)">
+                <input type="button" value="YELLOW" style="background:rgb(255, 187, 0);"      onClick="choiceBg(this.style.backgroundColor)">
+
+            <!-- <button id="bt_blue" style="background:rgb(0, 182, 223);"  onClick="bt_Blue()">BLUE</button>
+            <button id="bt_greenl" style="background:green;" onClick="bt_Green()">GREEN</button>
+            <button id="bt_yellow" style="background:rgb(255, 187, 0);" onClick="bt_Yellow()">YELLOW</button> -->
+            <p>
+            <button onClick="regist()">등록</button>
+            <button onClick="Del()">삭제</button>
+         <!-- </form>          -->
+    </div>
+             
+   
+
+    <div class="menu"></div>
+
+    <div id="top-banner">
+        <div id="navi">
+            <button id="bt_prev" onClick="prevMonth()">◁</button>
+            <span id="cal_title">2021년 04월</span>
+            <button id="bt_next" type="button" onClick="nextMonth()">▷</button>
+        </div>
+    </div>
+  
+        <div id="day_area" ></div>
+    
+</div>
+</body>
+</html>

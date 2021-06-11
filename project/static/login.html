@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+a[type=button] {
+  background-color: #272727;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;  
+}
+
+a[type=button]:hover {
+  background-color: #ff9100;
+}
+
+.container {
+  margin: auto;
+  width: 400px;
+  border-radius: 5px;
+  background-color: #fff6eb;
+  padding: 20px;
+}
+
+h3{
+  text-align: center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+  $("input[type=button]").click(function(){
+    if($("#user_id").val()==""){
+      alert("아이디를 입력하세요");
+      return;
+      }if($("#user_pass").val()==""){
+        alert("비밀번호를 입력하세요");
+        return;
+        }if($("#user_name").val()==""){
+          alert("이름을 입력하세요");
+          return;
+    }
+    $("form").attr("action", "/login");
+    $("form").attr("method", "post");
+    $("form").submit();
+  });
+});
+
+</script>
+</head>
+<body>
+    <h3>My Schedule Planner</h3>
+
+    <div class="container">
+        
+      <form action=""> 
+        <label for="user_id">● ID</label>
+        <input type="text" id="user_id" name="firstname" placeholder="ID...">
+    
+        <label for="user_pass">● Password</label>
+        <input type="password" id="user_pass" name="lastname" placeholder="Password..">
+        
+        <label for="user_name">● Name</label>
+        <input type="text" id="user_name" name="firstname" placeholder="Name..">
+        
+        <a href="./planner.html" type="button">Submit</a>
+      </form>
+</body>
+</html>
