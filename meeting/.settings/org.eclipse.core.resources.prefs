@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/admin/login/loginform.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/main/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/profile/payment.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/profile/regist.jsp=UTF-8
