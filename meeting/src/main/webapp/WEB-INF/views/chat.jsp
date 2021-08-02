@@ -30,14 +30,20 @@
  
  body{
  	margin-top: 120px;
+ 	margin-left: 200px;
  
  }
  
  #btn1, #btn2, #btn3, #btn4{
  	background: linear-gradient(45deg, #1de099, #1dc8cd);
  	color : white;
- 	border-radius: 10px;
+ 	border-radius: 5px;
  	border: none;
+ 	margin-top:30px;
+ }
+ 
+ #messageinput{
+ 	width: 500px;
  }
  
   
