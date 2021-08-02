@@ -45,21 +45,21 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="/resources/index.html" class="scrollto">Ollang Ollang</a></h1>
+        <h1><a href="/admin/main" class="scrollto">Ollang Ollang</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="/resources/assets/img/logo.png" alt=""></a> -->
       </div>
 
       <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li class="menu-active"><a href="index.html">Home</a></li>
+            <li class="menu-active"><a href="/admin/main">Home</a></li>
 
-            <li><a href="#team">Board</a></li>
-            <li><a href="#gallery">Chat</a></li>
+            <li><a href="/board/list">Board</a></li>
+            <li><a href="/login.do">Chat</a></li>
             <li class="menu-has-children">
               <a href="">Love Matching</a>
               <ul>
-                <li><a href="#">My Page</a></li>
+                <li><a href="/profile/registform">My Page</a></li>
                 <li class="menu-has-children">
                   <a href="#">Gallery</a>
                   <ul>
@@ -70,7 +70,7 @@
                 <li><a href="#">Cart</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Login</a></li>
+            <li><a href="/profile/payment">Payment</a></li>
           </ul>
         </nav>
         <!-- #nav-menu-container -->
@@ -382,7 +382,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 사용 기간 무제한</li>
 
               </ul>
-              <a href="#" class="get-started-btn">Charge</a>
+              <a href="/profile/payment" class="get-started-btn">Charge</a>
             </div>
           </div>
 
@@ -394,7 +394,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 사용 기간 무제한</li>
 
               </ul>
-              <a href="#" class="get-started-btn">Charge</a>
+              <a href="/profile/payment" class="get-started-btn">Charge</a>
             </div>
           </div>
 
@@ -406,7 +406,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 사용 기간 무제한</li>
 
               </ul>
-              <a href="#" class="get-started-btn">Charge</a>
+              <a href="/profile/payment" class="get-started-btn">Charge</a>
             </div>
           </div>
 
@@ -420,7 +420,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 주 1회 궁합 서비스 무료</li>
 
               </ul>
-              <a href="#" class="get-started-btn">Charge</a>
+              <a href="/profile/payment" class="get-started-btn">Charge</a>
             </div>
           </div>
 
@@ -434,7 +434,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 하루 1건 궁합 서비스 무료</li>
 
               </ul>
-              <a href="#" class="get-started-btn">Charge</a>
+              <a href="/profile/payment" class="get-started-btn">Charge</a>
             </div>
           </div>
 
@@ -448,7 +448,7 @@
                 <li><i class="ion-android-checkmark-circle"></i> 하루 5건 궁합 서비스 무료</li>
 
               </ul>
-              <a href="#" class="get-started-btn">Charge</a>
+              <a href="/profile/payment" class="get-started-btn">Charge</a>
             </div>
           </div>
 

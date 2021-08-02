@@ -51,21 +51,21 @@
     <header id="header" class="header-transparent header-fixed">
       <div class="container">
         <div id="logo" class="pull-left">
-          <h1><a href="index.html" class="scrollto">Ollang Ollang</a></h1>
+          <h1><a href="/admin/main" class="scrollto">Ollang Ollang</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="/resources/assets/img/logo.png" alt=""></a> -->
         </div>
 
         <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li class="menu-active"><a href="index.html">Home</a></li>
+            <li class="menu-active"><a href="/admin/main">Home</a></li>
 
-            <li><a href="#team">Board</a></li>
-            <li><a href="#gallery">Chat</a></li>
+            <li><a href="/board/list">Board</a></li>
+            <li><a href="/login.do">Chat</a></li>
             <li class="menu-has-children">
               <a href="">Love Matching</a>
               <ul>
-                <li><a href="#">My Page</a></li>
+                <li><a href="/profile/registform">My Page</a></li>
                 <li class="menu-has-children">
                   <a href="#">Gallery</a>
                   <ul>
@@ -76,7 +76,7 @@
                 <li><a href="#">Cart</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Login</a></li>
+            <li><a href="/profile/payment">Payment</a></li>
           </ul>
         </nav>
         <!-- #nav-menu-container -->
@@ -85,8 +85,8 @@
     <!-- End Header -->
 
     <main id="main">
-      <h4>Payment Page</h4>
-      <p>빈칸에 알맞는 형식을 적고 결제버튼을 누르세요.</p>
+      <h4>MyProfile Page</h4>
+      <p>본인의 프로필 상세를 등록해주세요.</p>
       <br />
 
       <div id="container">
