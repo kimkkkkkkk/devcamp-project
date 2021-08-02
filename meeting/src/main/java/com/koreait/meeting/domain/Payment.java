@@ -10,8 +10,8 @@ public class Payment {
 	private String c_card; 
 	private int c_num; 
 	private String c_email; 
-	private int month; 
-	private int year; 
+	private int c_month; 
+	private int c_year; 
 	private String c_owner; 
 	private int c_ccc; 
 	private String c_cardtype; 

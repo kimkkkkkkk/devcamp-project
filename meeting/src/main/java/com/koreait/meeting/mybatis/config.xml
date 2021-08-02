@@ -7,6 +7,7 @@
 		<typeAlias type="com.koreait.meeting.domain.Admin" alias="Admin"/>
 		<typeAlias type="com.koreait.meeting.domain.ProFile" alias="ProFile"/>
 		<typeAlias type="com.koreait.meeting.domain.Payment" alias="Payment"/>
+		<typeAlias type="com.koreait.meeting.domain.Board" alias="Board"/>
 
 	</typeAliases>
 
@@ -14,6 +15,7 @@
 		<mapper resource="com/koreait/meeting/mybatis/AdminMapper.xml"/>
 		<mapper resource="com/koreait/meeting/mybatis/ProFileMapper.xml"/>
 		<mapper resource="com/koreait/meeting/mybatis/PaymentMapper.xml"/>
+		<mapper resource="com/koreait/meeting/mybatis/BoardMapper.xml"/>
 
 	</mappers>
 </configuration>
