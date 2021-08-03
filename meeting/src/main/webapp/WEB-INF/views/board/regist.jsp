@@ -1,4 +1,8 @@
+<%@page import="com.koreait.meeting.domain.ProFile"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	ProFile proFile=(ProFile)request.getAttribute("proFile");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,6 +71,7 @@ function regist(){
 
 <div class="container">
   <form>
+  	<input type="hidden" 	name="profile_id" 		value="<%=proFile.getProfile_id()%>">
     <input type="text" 	name="title" 			placeholder="제목..">
     <input type="text" 	name="profile_id" 		placeholder="작성자..">
     <textarea 				name="content" 	placeholder="내용.." style="height:200px"></textarea>

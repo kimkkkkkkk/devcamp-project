@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class ProFile {
 	private int profile_id;
-	private int sign_id;
+	private int sign_id; //fk
 	private Admin admin; //부모정보를 has a 관계로 보유한다
 	private String nickname;
 	private String age;

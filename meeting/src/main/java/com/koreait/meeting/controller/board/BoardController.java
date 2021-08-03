@@ -3,6 +3,7 @@ package com.koreait.meeting.controller.board;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.koreait.meeting.domain.Board;
+import com.koreait.meeting.domain.ProFile;
 import com.koreait.meeting.model.board.service.BoardService;
 
 @Controller
@@ -30,7 +32,7 @@ public class BoardController {
 	private BoardService boardService; //DI로 주입을 요청
 	
 	
-	//모든 상품 가져오기 
+	//모든 게시판 가져오기 
 	@GetMapping("/list")
 	public String getList(Model model) {
 		//3단계: 일시키기
@@ -42,28 +44,33 @@ public class BoardController {
 		return "board/list";
 	}
 	
-	//상품 등록폼 요청처리 
-	@RequestMapping(value="/board/registform", method = {RequestMethod.GET, RequestMethod.POST})
-	public String registForm(Model model) {
-		//3단계: 최상위 카테고리 가져오기 
-		List boardList = boardService.selectAll();
+	//게시판 등록폼 요청처리 
+	@RequestMapping(value="/registform", method = {RequestMethod.GET, RequestMethod.POST})
+	public String registForm(Model model, HttpServletRequest request) {
 		
-		//4단계:결과저장 
-		model.addAttribute("boardList", boardList);
+		HttpSession session = request.getSession();
+		ProFile proFile = (ProFile)session.getAttribute("proFile");
+		System.out.println("게시판 form  이동시  Profile_id "+proFile.getProfile_id());		
+		model.addAttribute("proFile", proFile);
 		
 		return "board/regist";
 	}
 	
-	//상품 등록 요청
+	//게시판 등록 요청
 	@RequestMapping(value="/regist", method = {RequestMethod.GET, RequestMethod.POST})
 	public String regist(Board board, HttpServletRequest request) {
 		
 		boardService.insert(board);
+		HttpSession session = request.getSession();
+		ProFile proFile = (ProFile)session.getAttribute("proFile");
+		System.out.println("게시판 등록 직전의 Profile_id "+proFile.getProfile_id());
 		
-		return "redirect:/board/list"; //상품 목록페이지를 재요청
+		board.setProfile_id(proFile.getProfile_id());
+		
+		return "redirect:/board/list"; //게시판 목록페이지를 재요청
 	}
 
-	//상품 상세보기 요청 
+	//게시판 상세보기 요청 
 	@GetMapping("/detail")
 	public String getDetail(int board_id, Model model) {
 		//3단계:
@@ -87,7 +94,7 @@ public class BoardController {
 	}
 
 	
-	//상품 삭제요청 처리 
+	//게시판 삭제요청 처리 
 	@PostMapping("/del")
 	public String delete(int board_id, HttpServletRequest request){
 		//3단계

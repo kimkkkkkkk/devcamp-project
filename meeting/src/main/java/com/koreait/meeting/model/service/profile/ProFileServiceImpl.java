@@ -22,6 +22,10 @@ public class ProFileServiceImpl implements ProFileService{
 	public ProFile select(int profile_id) {
 		return proFileDAO.select(profile_id);
 	}
+	
+	public ProFile selectByAdmin(int profile_id) {
+		return proFileDAO.selectByAdmin(profile_id);
+	}
 
 	public void regist(ProFile proFile) throws DMLException{
 		proFileDAO.insert(proFile);

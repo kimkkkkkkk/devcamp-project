@@ -1,7 +1,7 @@
 <%@page import="com.koreait.meeting.domain.ProFile"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%
-	ProFile proFile=(ProFile)request.getAttribute("proFile");
+	ProFile proFile=(ProFile)session.getAttribute("proFile");
 %>
 <!DOCTYPE html>
 <html>
@@ -317,13 +317,6 @@
      	$("form").submit();
     }
     
-  	function del(){
-  		$("form").attr({
-  			"action":"/error/result",
-  			"method":"post"
-  		});	
-  		$("form").submit();	
-  	}
   	function edit(){
   		$("form").attr({
   			"action":"/profile/regist",

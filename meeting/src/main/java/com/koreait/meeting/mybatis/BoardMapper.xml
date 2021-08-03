@@ -11,12 +11,22 @@
 	</select>	
 	
 	<insert id="insert" parameterType="Board">
-		insert into board(title, profile_id, content) values(#{title},#{profile_id},#{content})
+		insert into board(profile_id, title, content) values(#{profile_id},#{title},#{content})
 	</insert>
+	
+	<resultMap type="Board" id="BoardProFile">
+		<id column="board_id" 					property="board_id"/>
+		<result column="profile_id" 			property="profile_id"/>
+		<result	column="title"					property="title"/>
+		<result	column="content"				property="content"/>
+		
+		<association column="profile_id"	property="proFile"	 javaType="ProFile"
+			select="ProFile.select"/>	
+	</resultMap>
 	
 	
 	<update id="update" parameterType="Board">
-		update board set title=#{title}, profile_id=#{profile_id}, content=#{content} 
+		update board set profile_id=#{profile_id}, title=#{title}, content=#{content} 
 		where board_id=#{board_id}
 	</update>
 	

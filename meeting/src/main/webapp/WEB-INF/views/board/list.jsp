@@ -141,7 +141,7 @@ $(function(){
 		<%} %>
 		<tr>
 			<td colspan="5">
-				<button onClick="location.href='/board/regist';">등록</button>
+				<button onClick="location.href='/board/registform';">등록</button>
 			</td>
 		</tr>
 	</table>

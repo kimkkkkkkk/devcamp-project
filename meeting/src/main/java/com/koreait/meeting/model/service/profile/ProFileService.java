@@ -7,6 +7,7 @@ import com.koreait.meeting.domain.ProFile;
 public interface ProFileService {
 	public List selectAll();
 	public ProFile select(int profile_id);
+	public ProFile selectByAdmin(int profile_id);
 	public void regist(ProFile proFile);
 	public void update(ProFile proFile);
 	public void delete(int profile_id);

@@ -22,7 +22,12 @@ public class MybatisProFileDAO implements ProFileDAO{
 	public ProFile select(int profile_id) {
 		return sqlSessionTemplate.selectOne("ProFile.select", profile_id);
 	}
-
+	
+	@Override
+	public ProFile selectByAdmin(int profile_id) {
+		return sqlSessionTemplate.selectOne("ProFile.selectByAdmin", profile_id);
+	}
+	
 	public void insert(ProFile proFile) throws DMLException{
 		System.out.println("프로필 드록 전 sign_id "+proFile.getSign_id());
 		
@@ -50,5 +55,7 @@ public class MybatisProFileDAO implements ProFileDAO{
 	public List selectBySignUp(int sign_id) {
 		return sqlSessionTemplate.selectList("ProFile.selectBySignUp", sign_id);
 	}
+
+
 
 }

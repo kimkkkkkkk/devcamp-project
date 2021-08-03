@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.koreait.meeting.domain.Admin;
+import com.koreait.meeting.domain.ProFile;
 import com.koreait.meeting.exception.MemberExistException;
 import com.koreait.meeting.model.service.admin.AdminService;
+import com.koreait.meeting.model.service.profile.ProFileService;
 
 
 
@@ -29,6 +31,9 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private ProFileService proFileService;
 	
 	
 	//로그인 폼 요청 처리 
@@ -44,10 +49,18 @@ public class AdminController {
 		
 		//3단계: 일 시키기 
 		Admin obj=adminService.login(admin);
+		System.out.println("로ㅓ그인 성공 후 sign_id는 "+obj.getSign_id());
+		
+		ProFile proFile = proFileService.selectByAdmin(obj.getSign_id());
+		proFile = proFileService.select(obj.getSign_id());
+		
+		System.out.println(proFile.getProfile_id());
 		
 		//4단계: 저장 
 		HttpSession session=request.getSession();
 		session.setAttribute("admin", obj);// request가 아닌 세션에 저장함 
+		session.setAttribute("proFile", proFile);// request가 아닌 세션에 저장함 
+		
 		return "redirect:/admin/main"; //어드민 메인페이지 명
 	}
 	

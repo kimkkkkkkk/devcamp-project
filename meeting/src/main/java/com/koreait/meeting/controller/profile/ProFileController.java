@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.koreait.meeting.domain.Admin;
 import com.koreait.meeting.domain.ProFile;
 import com.koreait.meeting.model.common.file.FileManager;
 import com.koreait.meeting.model.service.profile.ProFileService;
@@ -65,12 +64,22 @@ public class ProFileController {
 		long time=System.currentTimeMillis();
 		
 		String imgfile=time+"."+fileManager.getExt(photo.getOriginalFilename());
+		
 		fileManager.saveFile(context, imgfile , photo);
+		HttpSession session = request.getSession();
+		Admin admin = (Admin)session.getAttribute("admin");
+		System.out.println("프로플 등록 직전의 sign_id"+admin.getSign_id());
+		
+		proFile.setSign_id(admin.getSign_id());
 		proFile.setFilename(imgfile); 
 		proFileService.regist(proFile);
 		
+		//추후 프로필을 사요하기 위해 세션에 담아놓아야 한다  
+		session.setAttribute("proFile", proFile); //profile_id 채워져 있다... selectkey 에 의해 
+		System.out.println("프로플 등록 후  select key 's profile_id  = "+admin.getSign_id());
 		
-		return "admin/main/index"; // 프로필 목록페이지를 재요청
+		//return "admin/main/index"; // 프로필 목록페이지를 재요청
+		return "admin/profile/regist";
 	}
 
 //	//프로필 상세보기 요청 , 상세보기 만들어야하나유......ㅜ
