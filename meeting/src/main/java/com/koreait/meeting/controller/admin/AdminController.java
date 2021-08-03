@@ -54,7 +54,7 @@ public class AdminController {
 		ProFile proFile = proFileService.selectByAdmin(obj.getSign_id());
 		proFile = proFileService.select(obj.getSign_id());
 		
-		System.out.println(proFile.getProfile_id());
+		//System.out.println(proFile.getProfile_id());
 		
 		//4단계: 저장 
 		HttpSession session=request.getSession();

@@ -112,13 +112,14 @@
                 <div class="row">
                   <div class="col-50">
                     <label for="fname"
-                      ><i class="fa fa-user"></i>NickName</label
+                      ><i class="fa fa-user" ></i>NickName</label
                     >
                     <input
                       type="text"
                       id="fname"
                       name="nickname"
                       placeholder="Your name.."
+                      value="<%=proFile.getNickname() %>"
                     />
                     <label for="email"><i class="fa fa-envelope"></i>Age</label>
                     <input
@@ -126,6 +127,7 @@
                       id="email"
                       name="age"
                       placeholder="Your age.."
+                      value="<%=proFile.getAge() %>"
                     />
                     <label for="adr"
                       ><i class="fa fa-address-card-o"></i> sex</label
@@ -135,6 +137,7 @@
                       id="adr"
                       name="sex"
                       placeholder="Your sex.."
+                      value="<%=proFile.getSex() %>"
                     />
                     <label for="city"
                       ><i class="fa fa-institution"></i>Height</label
@@ -144,6 +147,7 @@
                       id="city"
                       name="height"
                       placeholder="Your height.."
+                      value="<%=proFile.getHeight() %>"
                     />
 
                     <div class="row">
@@ -154,6 +158,7 @@
                           name="introduce"
                           placeholder="Your Introduce.."
                           style="width: 100%"
+                          value="<%=proFile.getIntroduce() %>"
                         ></textarea>
                       </div>
                     </div>
@@ -170,6 +175,7 @@
                           id="fname"
                           name="weight"
                           placeholder="Your weight.."
+                          value="<%=proFile.getWeight() %>"
                         />
                         <label for="email"
                           ><i class="fa fa-envelope"></i> Job</label
@@ -179,6 +185,7 @@
                           id="email"
                           name="job"
                           placeholder="Your job.."
+                          value="<%=proFile.getJob() %>"
                         />
                         <label for="adr"
                           ><i class="fa fa-address-card-o"></i>Area</label
@@ -188,6 +195,7 @@
                           id="adr"
                           name="area"
                           placeholder="Your area.."
+                          value="<%=proFile.getArea() %>"
                         />
                         <label for="city"
                           ><i class="fa fa-institution"></i>Interest</label
@@ -197,6 +205,7 @@
                           id="city"
                           name="interest"
                           placeholder="Your interest.."
+                          value="<%=proFile.getInterest() %>"
                         />
 
                         <div class="row">
@@ -207,6 +216,7 @@
                               id="state"
                               name="mbti"
                               placeholder="Your MBTI.."
+                              value="<%=proFile.getMbti() %>"
                             />
                           </div>
 
@@ -219,6 +229,7 @@
                                   class="custom-file-input"
                                   id="exampleInputFile"
                                   name="photo"
+                                  value="<%=proFile.getFilename() %>"
                                 />
                                 <labelre
                                   class="custom-file-label"
@@ -235,7 +246,7 @@
 
                
  				 <input type="button" value="Regist" id="bt_regist">
-	       		 <input type="button" value="Update" id="bt_update">
+	       		 <input type="button" value="edit" id="bt_edit">
 	        	 
                 </div>
               </form>
@@ -263,31 +274,7 @@
 
 
     <script>
-    "use strct";
-
-    var inputFile = document.querySelector("#exampleInputFile");
-    var pictureList = document.getElementById("pictureList");
-
-    pictureList.addEventListener("click", (e) => {
-      const { target } = e;
-      if (target.tagName !== "IMG") return;
-
-      var expandImg = document.getElementById("expandedImg");
-      var imgText = document.getElementById("imgtext");
-      expandImg.src = target.src;
-      imgText.innerHTML = target.alt;
-      expandImg.parentElement.style.display = "block";
-    });
-
-    inputFile.addEventListener("change", (e) => {
-      const [file] = e.target.files;
-      const newImage = document.createElement("img");
-
-      if (file) {
-        newImage.src = URL.createObjectURL(file);
-        pictureList.appendChild(newImage);
-      }
-    });
+    
     
     $(function(){
   		CKEDITOR.replace("content");
@@ -300,9 +287,9 @@
   		});
   		
   		//버튼에 이벤트 연결하기 
-  		$("#bt_update").click(function(){
+  		$("#bt_edit").click(function(){
   			if(confirm("수정하시겠어요?")){
-  				update();	
+  				edit();	
   			}
   		});
   	});
@@ -319,9 +306,10 @@
     
   	function edit(){
   		$("form").attr({
-  			"action":"/profile/regist",
-  			"method":"post"
-  		});	
+  			action:"/profile/edit",
+    		method:"post",
+    		enctype:"multipart/form-data"
+     		});
   		$("form").submit();
   	}
 

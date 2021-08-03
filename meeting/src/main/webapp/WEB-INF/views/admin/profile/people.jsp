@@ -1,121 +1,122 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Add icon library -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-      body {
-        background: linear-gradient(45deg, #1de099, #1dc8cd);
-        padding: 20px;
-        font-family: Arial;
-      }
+body {
+  background: linear-gradient(45deg, #1de099, #1dc8cd);
+  padding: 20px;
+  font-family: Arial;
+}
 
-      /* Center website */
-      .main {
-        max-width: 1000px;
-        margin: auto;
-      }
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
 
-      h1 {
-        font-size: 50px;
-        word-break: break-all;
-        color: white;
-      }
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+  color: white;
+}
 
-      .row {
-        margin: 10px -16px;
-      }
+.row {
+  margin: 10px -16px;
+}
 
-      /* Add padding BETWEEN each column */
-      .row,
-      .row > .column {
-        padding: 8px;
-      }
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
 
-      /* Create three equal columns that floats next to each other */
-      .column {
-        float: left;
-        width: 33.33%;
-        display: none; /* Hide all elements by default */
-      }
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
 
-      /* Clear floats after rows */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-      /* Content */
-      .content {
-        background-color: white;
-        padding: 10px;
-      }
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
 
-      /* The "show" class is added to the filtered elements */
-      .show {
-        display: block;
-      }
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
 
-      /* Style the buttons */
-      .btn {
-        border: none;
-        outline: none;
-        padding: 12px 16px;
-        background-color: white;
-        cursor: pointer;
-      }
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
 
-      .btn:hover {
-        background-color: #eff5f5;
-      }
+.btn:hover {
+  background-color: #eff5f5;
+}
 
-      .btn.active {
-        background-color: #eff5f5;
-        color: white;
-      }
+.btn.active {
+  background-color: #eff5f5;
+  color: white;
+}
 
-      .card {
-        background: white;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
+.card {
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-      .container {
-        padding: 0 16px;
-      }
+.container {
+  padding: 0 16px;
+}
 
-      .container::after,
-      .row::after {
-        content: "";
-        clear: both;
-        display: table;
-      }
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-      .title {
-        color: grey;
-      }
+.title {
+  color: grey;
+}
 
-      .button {
-        border: none;
-        background-color: inherit;
-        padding: 14px 28px;
-        font-size: 16px;
-        cursor: pointer;
-        display: inline-block;
-        color: red;
-      }
+.button {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: red;
+}
 
-      .button:hover {
-        background-color: pink;
-      }
+.button:hover {
+  background-color: pink;
+}
     </style>
   </head>
   <body>
@@ -139,6 +140,7 @@
       </div>
 
       <!-- Portfolio Gallery Grid -->
+      <form>
       <div class="row">
         <div class="column likeyou">
           <div class="card">
@@ -153,7 +155,7 @@
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
               <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
+                <button class="button" id="chat"><a href="/login.do">1:1 채팅연결</a></button>
               </p>
             </div>
           </div>
@@ -171,7 +173,7 @@
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
               <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
+                <button class="button" id="chat"><a href="/login.do">1:1 채팅연결</a></button>
               </p>
             </div>
           </div>
@@ -189,7 +191,7 @@
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
               <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
+                <button class="button" id="chat"><a href="/login.do">1:1 채팅연결</a></button>
               </p>
             </div>
           </div>
@@ -207,7 +209,7 @@
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
               <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
+               <button class="button" id="chat"><a href="/login.do">1:1 채팅연결</a></button>
               </p>
             </div>
           </div>
@@ -225,7 +227,7 @@
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
               <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
+                <button class="button" id="chat"><a href="/login.do">1:1 채팅연결</a></button>
               </p>
             </div>
           </div>
@@ -233,11 +235,31 @@
 
         <!-- END GRID -->
       </div>
-
+</form>
       <!-- END MAIN -->
     </div>
 
     <script>
+    
+    $(function(){
+  		CKEDITOR.replace("content");
+  		
+  		//버튼에 이벤트 연결하기 
+  		$("#chat").click(function(){
+  			if(confirm("1:1 채팅하시겠어요?")){
+  				chat();	
+  			}
+  		});
+  	});
+    
+    function chat(){
+     	$("form").attr({
+     		action:"/profile/gallery",
+    		method:"post"
+     		});
+     	$("form").submit();
+    }
+    
       filterSelection("all");
       function filterSelection(c) {
         var x, i;

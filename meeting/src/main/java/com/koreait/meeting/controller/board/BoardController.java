@@ -30,11 +30,10 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService; //DI로 주입을 요청
-	
-	
+		
 	//모든 게시판 가져오기 
 	@GetMapping("/list")
-	public String getList(Model model) {
+	public String getList(Model model, HttpServletRequest request) {
 		//3단계: 일시키기
 		List boardList = boardService.selectAll();
 		
@@ -50,8 +49,8 @@ public class BoardController {
 		
 		HttpSession session = request.getSession();
 		ProFile proFile = (ProFile)session.getAttribute("proFile");
-		System.out.println("게시판 form  이동시  Profile_id "+proFile.getProfile_id());		
-		model.addAttribute("proFile", proFile);
+		//System.out.println("게시판 form  이동시  Profile_id "+proFile.getProfile_id());		
+		model.addAttribute("ProFile", proFile);
 		
 		return "board/regist";
 	}
@@ -61,18 +60,18 @@ public class BoardController {
 	public String regist(Board board, HttpServletRequest request) {
 		
 		boardService.insert(board);
-		HttpSession session = request.getSession();
-		ProFile proFile = (ProFile)session.getAttribute("proFile");
-		System.out.println("게시판 등록 직전의 Profile_id "+proFile.getProfile_id());
+		//HttpSession session = request.getSession();
+		//ProFile proFile = (ProFile)session.getAttribute("proFile");
+		//System.out.println("게시판 등록 직전의 Profile_id "+proFile.getProfile_id());
 		
-		board.setProfile_id(proFile.getProfile_id());
+		//board.setProfile_id(proFile.getProfile_id());
 		
 		return "redirect:/board/list"; //게시판 목록페이지를 재요청
 	}
 
 	//게시판 상세보기 요청 
 	@GetMapping("/detail")
-	public String getDetail(int board_id, Model model) {
+	public String getDetail(int board_id, Model model, HttpServletRequest request) {
 		//3단계:
 		Board board= boardService.select(board_id);
 		List boardList=boardService.selectAll();

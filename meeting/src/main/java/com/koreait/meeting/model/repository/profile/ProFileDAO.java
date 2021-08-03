@@ -11,7 +11,7 @@ public interface ProFileDAO {
 	public void insert(ProFile proFile);
 	public void update(ProFile proFile);
 	public void delete(int profile_id);
-	public List selectBySignUp(int sign_id);
+	//public List selectBySignUp(int sign_id);
 	
 	
 }

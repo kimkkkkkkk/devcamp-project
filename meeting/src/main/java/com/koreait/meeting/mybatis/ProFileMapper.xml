@@ -6,9 +6,11 @@
 	<insert id="insert" parameterType="ProFile">
 		insert into profile(sign_id, nickname, age, sex, height, introduce, weight, job, area, interest, mbti, filename)
 		values(#{sign_id},#{nickname},#{age},#{sex},#{height},#{introduce},#{weight},#{job},#{area},#{interest},#{mbti},#{filename})
+		
 		<selectKey keyProperty="profile_id" resultType="int" keyColumn="profile_id">
 			select last_insert_id() as profile_id
 		</selectKey>
+		
 	</insert>	
 	
 	<select id="selectAll" resultType="ProFile">

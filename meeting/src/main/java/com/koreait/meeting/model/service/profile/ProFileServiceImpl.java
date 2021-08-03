@@ -39,8 +39,8 @@ public class ProFileServiceImpl implements ProFileService{
 		proFileDAO.delete(profile_id);
 	}
 
-	public List selectBySignUp(int sign_id) {
-		return proFileDAO.selectBySignUp(sign_id);
-	}
+	//public List selectBySignUp(int sign_id) {
+	//	return proFileDAO.selectBySignUp(sign_id);
+	//}
 
 }

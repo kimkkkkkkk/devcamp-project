@@ -52,9 +52,9 @@ public class MybatisProFileDAO implements ProFileDAO{
 		}
 	}
 
-	public List selectBySignUp(int sign_id) {
-		return sqlSessionTemplate.selectList("ProFile.selectBySignUp", sign_id);
-	}
+	//public List selectBySignUp(int sign_id) {
+	//	return sqlSessionTemplate.selectList("ProFile.selectBySignUp", sign_id);
+	//}
 
 
 
