@@ -31,18 +31,7 @@ public class ProFileController {
 	@Autowired
 	private  FileManager fileManager;
 	
-//	//?? 모든 프로필 가져오기 ??
-//	@RequestMapping(value="/regist", method=RequestMethod.GET)
-//	public String getList(Model model, HttpServletRequest request){
-//		//3단계 : 일시키기
-//		List profileList = proFileService.selectAll();
-//		
-//		//4단계 : 결과저장
-//		model.addAttribute("profileList",profileList);
-//		
-//		return "admin/profile/regist";
-//	}
-//	
+
 	//프로필 등록폼 요청처리 
 	@GetMapping("/registform")
 	public String registForm(Model model, HttpServletRequest request) {
@@ -130,6 +119,11 @@ public class ProFileController {
 	@GetMapping("/gallery")
 	public String getGallery(HttpServletRequest request) {
 		return "admin/profile/people";
+	}
+	//관리자 메인 페이지 요청 
+	@GetMapping("/payment")
+	public String getPayment(HttpServletRequest request) {
+		return "admin/profile/payment";
 	}
 
 

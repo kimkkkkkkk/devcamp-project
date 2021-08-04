@@ -83,8 +83,8 @@
   <section id="intro">
 
     <div class="intro-text">
-      <h2># 올랑올랑</h2>
-      <p>가슴이 자꾸 두근거리는...</p>
+      <h2># 올랑 올랑</h2>
+      <p> 가슴이 자꾸 두근거리는...</p>
       <a href="#about" class="btn-get-started scrollto">빠져들다</a>
     </div>
 
@@ -592,8 +592,8 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="/resources/assets/img/gallery/index_gallery_1.jpg" data-gall="portfolioGallery" class="venobox">
-                <img src="/resources/assets/img/gallery/index_gallery_1.jpg" alt="">
+              <a href="/resources/assets/img/gallery/couple4.jpg" data-gall="portfolioGallery" class="venobox">
+                <img src="/resources/assets/img/gallery/couple4.jpg" alt="">
               </a>
             </div>
           </div>
@@ -608,32 +608,32 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="/resources/assets/img/gallery/index_gallery_3.jpg" data-gall="portfolioGallery" class="venobox">
-                <img src="/resources/assets/img/gallery/index_gallery_3.jpg" alt="">
+              <a href="/resources/assets/img/gallery/hands.jpg" data-gall="portfolioGallery" class="venobox">
+                <img src="/resources/assets/img/gallery/hands.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="/resources/assets/img/gallery/index_gallery_4.jpg" data-gall="portfolioGallery" class="venobox">
-                <img src="/resources/assets/img/gallery/index_gallery_4.jpg" alt="">
+              <a href="/resources/assets/img/gallery/couple6.jpg" data-gall="portfolioGallery" class="venobox">
+                <img src="/resources/assets/img/gallery/couple6.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="/resources/assets/img/gallery/index_gallery_5.jpg" data-gall="portfolioGallery" class="venobox">
-                <img src="/resources/assets/img/gallery/index_gallery_5.jpg" alt="">
+              <a href="/resources/assets/img/gallery/wedding.jpg" data-gall="portfolioGallery" class="venobox">
+                <img src="/resources/assets/img/gallery/wedding.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="/resources/assets/img/gallery/index_gallery_6.jpg" data-gall="portfolioGallery" class="venobox">
-                <img src="/resources/assets/img/gallery/index_gallery_6.jpg" alt="">
+              <a href="/resources/assets/img/gallery/couple5.jpg" data-gall="portfolioGallery" class="venobox">
+                <img src="/resources/assets/img/gallery/couple5.jpg" alt="">
               </a>
             </div>
           </div>

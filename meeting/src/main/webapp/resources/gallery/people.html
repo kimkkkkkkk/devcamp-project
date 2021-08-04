@@ -7,13 +7,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- header -->
+
     <style>
       * {
         box-sizing: border-box;
       }
 
       body {
-        background: linear-gradient(45deg, #1de099, #1dc8cd);
+        background: linear-gradient(90deg, rgb(201, 243, 237), #c7ffeb);
         padding: 20px;
         font-family: Arial;
       }
@@ -25,7 +27,14 @@
       }
 
       h1 {
-        font-size: 50px;
+        font-size: 30px;
+        word-break: break-all;
+        color: white;
+        margin-top: 150px;
+      }
+
+      h2 {
+        font-size: 20px;
         word-break: break-all;
         color: white;
       }
@@ -75,11 +84,11 @@
       }
 
       .btn:hover {
-        background-color: #eff5f5;
+        background-color: pink;
       }
 
       .btn.active {
-        background-color: #eff5f5;
+        background-color: pink;
         color: white;
       }
 
@@ -110,7 +119,7 @@
         font-size: 16px;
         cursor: pointer;
         display: inline-block;
-        color: red;
+        background: rgb(255, 197, 219);
       }
 
       .button:hover {
@@ -120,7 +129,8 @@
   </head>
   <body>
     <!-- MAIN (Center website) -->
-    <div class="main">
+    <div class="main2">
+      <div class="main"></div>
       <h1>Ollang Like</h1>
       <hr />
 
@@ -139,105 +149,135 @@
       </div>
 
       <!-- Portfolio Gallery Grid -->
-      <div class="row">
-        <div class="column likeyou">
-          <div class="card">
-            <img
-              src="../assets/img/momo1.jpg"
-              alt="Jane"
-              style="width: 100%"
-            />
-            <div class="container">
-              <h2>Jane Doe</h2>
-              <p class="title">CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
-              </p>
+      <form>
+        <div class="row">
+          <div class="column likeyou">
+            <div class="card">
+              <img
+                src="../assets/img/momo1.jpg"
+                alt="Jane"
+                style="width: 100%"
+              />
+              <div class="container">
+                <h2>Jane Doe</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>example@example.com</p>
+                <p>
+                  <button class="button" id="chat">
+                    <a href="/login.do">1:1 채팅연결</a>
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column likeyou">
-           <div class="card">
-            <img
-              src="../assets/img/momo1.jpg"
-              alt="Jane"
-              style="width: 100%"
-            />
-            <div class="container">
-              <h2>Jane Doe</h2>
-              <p class="title">CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
-              </p>
+          <div class="column likeyou">
+            <div class="card">
+              <img
+                src="../assets/img/momo1.jpg"
+                alt="Jane"
+                style="width: 100%"
+              />
+              <div class="container">
+                <h2>Jane Doe</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>example@example.com</p>
+                <p>
+                  <button class="button" id="chat">
+                    <a href="/login.do">1:1 채팅연결</a>
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column likeyou">
-           <div class="card">
-            <img
-              src="../assets/img/momo1.jpg"
-              alt="Jane"
-              style="width: 100%"
-            />
-            <div class="container">
-              <h2>Jane Doe</h2>
-              <p class="title">CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
-              </p>
+          <div class="column likeyou">
+            <div class="card">
+              <img
+                src="../assets/img/momo1.jpg"
+                alt="Jane"
+                style="width: 100%"
+              />
+              <div class="container">
+                <h2>Jane Doe</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>example@example.com</p>
+                <p>
+                  <button class="button" id="chat">
+                    <a href="/login.do">1:1 채팅연결</a>
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column likeme">
-           <div class="card">
-            <img
-              src="../assets/img/momo2.jpg"
-              alt="Jane"
-              style="width: 100%"
-            />
-            <div class="container">
-              <h2>Jane Doe</h2>
-              <p class="title">CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
-              </p>
+          <div class="column likeme">
+            <div class="card">
+              <img
+                src="../assets/img/momo2.jpg"
+                alt="Jane"
+                style="width: 100%"
+              />
+              <div class="container">
+                <h2>Jane Doe</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>example@example.com</p>
+                <p>
+                  <button class="button" id="chat">
+                    <a href="/login.do">1:1 채팅연결</a>
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column likeme">
-          <div class="card">
-            <img
-              src="../assets/img/momo2.jpg"
-              alt="Jane"
-              style="width: 100%"
-            />
-            <div class="container">
-              <h2>Jane Doe</h2>
-              <p class="title">CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>example@example.com</p>
-              <p>
-                <button class="button"><a href="/login.do"></a>1:1 채팅연결</button>
-              </p>
+          <div class="column likeme">
+            <div class="card">
+              <img
+                src="../assets/img/momo2.jpg"
+                alt="Jane"
+                style="width: 100%"
+              />
+              <div class="container">
+                <h2>Jane Doe</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>example@example.com</p>
+                <p>
+                  <button class="button" id="chat">
+                    <a href="/login.do">1:1 채팅연결</a>
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- END GRID -->
-      </div>
-
+          <!-- END GRID -->
+        </div>
+      </form>
       <!-- END MAIN -->
     </div>
 
     <script>
+      $(function () {
+        CKEDITOR.replace("content");
+
+        //버튼에 이벤트 연결하기
+        $("#chat").click(function () {
+          if (confirm("1:1 채팅하시겠어요?")) {
+            chat();
+          }
+        });
+      });
+
+      function chat() {
+        $("form").attr({
+          action: "/profile/gallery",
+          method: "post",
+        });
+        $("form").submit();
+      }
+
       filterSelection("all");
       function filterSelection(c) {
         var x, i;
