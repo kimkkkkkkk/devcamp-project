@@ -146,7 +146,7 @@ a{
     <div class="main2">
     <div class="main">
      </div>
-      <h1>Like</h1>
+      <h1>Member</h1>
       <hr />
 
       <h2>Profile Image</h2>

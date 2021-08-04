@@ -152,6 +152,10 @@ input[type="button"] {
 input[type="button"]:hover {
   background: linearrgb(128, 255, 255) nt(45deg, #1de099, #1dc8cd);
 }
+input[type=""]:hover {
+  background: linearrgb(128, 255, 255) nt(45deg, #1de099, #1dc8cd);
+}
+
 
 a {
   color: #2196f3;

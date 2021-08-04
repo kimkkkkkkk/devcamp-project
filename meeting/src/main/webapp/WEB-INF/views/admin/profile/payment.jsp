@@ -24,7 +24,7 @@
   <div class="container">
 
     <div id="logo" class="pull-left">
-      <h1><a href="index.html" class="scrollto">Ollang Ollang</a></h1>
+      <h1><a href="/admin/main" class="scrollto">Ollang Ollang</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html"><img src="/resources/assets/img/logo.png" alt=""></a> -->
     </div>
@@ -33,21 +33,22 @@
       <ul class="nav-menu">
         <li class="menu-active"><a href="index.html">Home</a></li>
       
-        <li><a href="#team">Board</a></li>
-        <li><a href="#gallery">Chat</a></li>
-        <li class="menu-has-children"><a href="">Love Matching</a>
+        <li><a href="/board/list">Board</a></li>
+        <li><a href="/login.do">Chat</a></li>
+        <a href="">Love Matching</a>
           <ul>
-            <li><a href="#">My Page</a></li>
-            <li class="menu-has-children"><a href="#">Gallery</a>
+            <li><a href="/profile/registform">My Page</a></li>
+            <li class="menu-has-children">
+            <a href="#">Gallery</a>
               <ul>
-                <li><a href="#">Male</a></li>
-                <li><a href="#">Female</a></li>
+                <li><a href="/profile/gallery">Member</a></li>
+          
               </ul>
             </li>
             <li><a href="#">Cart</a></li>
           </ul>
         </li>
-        <li><a href="#contact">Login</a></li>
+        <li><a href="/profile/payment">Payment</a></li>
       </ul>
     </nav><!-- #nav-menu-container -->
   </div>
@@ -99,11 +100,11 @@
             <input type="text" id="expmonth" name="c_account" placeholder="1001-9999-8888-77">
             <div class="row">
               <div class="col-50">
-                <label for="expyear">카드 명의자</label>
+                <label for="expyear" >카드 명의자</label>
                 <input type="text" id="expyear" name="c_owner" placeholder="박귀자">
               </div>
               <div class="col-50">
-                <label for="cvv">CVC,CVV,CCV</label>
+                <label for="cvv" >CVC,CVV,CCV</label>
                 <input type="text" id="cvv" name="c_ccc" placeholder="352">
               </div>
             </div>

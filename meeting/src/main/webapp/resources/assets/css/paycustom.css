@@ -18,13 +18,13 @@ body {
 
 .col-25 {
   -ms-flex: 25%; /* IE10 */
-  flex: 25%;
+  flex: 15%;
 }
 
 .col-50 {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .col-75 {
@@ -45,7 +45,7 @@ body {
   border-radius: 3px;
 }
 
-input[type=text] {
+input[type="text"] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
@@ -58,8 +58,8 @@ label {
   display: block;
 }
 
-#cc{
-	 margin-top:  40px;
+#cc {
+  margin-top: 40px;
 }
 
 .icon-container {
@@ -85,7 +85,7 @@ label {
 }
 
 a {
-  color: #2196F3;
+  color: #2196f3;
 }
 
 hr {
@@ -95,6 +95,10 @@ hr {
 span.price {
   float: right;
   color: grey;
+}
+
+#ha {
+  margin-top: 30px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */

@@ -47,43 +47,11 @@
     <link href="/resources/assets/css/profilecustom.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="header-transparent header-fixed">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <h1><a href="/admin/main" class="scrollto">Ollang Ollang</a></h1>
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html"><img src="/resources/assets/img/logo.png" alt=""></a> -->
-        </div>
-
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li class="menu-active"><a href="/admin/main">Home</a></li>
-
-            <li><a href="/board/list">Board</a></li>
-            <li><a href="/login.do">Chat</a></li>
-            <li class="menu-has-children">
-              <a href="">Love Matching</a>
-              <ul>
-                <li><a href="/profile/registform">My Page</a></li>
-                <li class="menu-has-children">
-                  <a href="#">Gallery</a>
-                  <ul>
-                    <li><a href="#">Male</a></li>
-                    <li><a href="#">Female</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Cart</a></li>
-              </ul>
-            </li>
-            <li><a href="/profile/payment">Payment</a></li>
-          </ul>
-        </nav>
-        <!-- #nav-menu-container -->
-      </div>
-    </header>
-    <!-- End Header -->
-
+    <!-- header start-->
+	<%@ include file="../inc/toolbar.jsp" %>
+	<!-- header end -->
+	
+	
     <main id="main">
       <h4>MyProfile Page</h4>
       <p>본인의 프로필 상세를 등록해주세요.</p>
@@ -256,21 +224,6 @@
       </div>
     </main>
 
-    <!-- Vendor JS Files -->
-    <script src="/resources/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/resources/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
-    <script src="/resources/assets/vendor/wow/wow.min.js"></script>
-    <script src="/resources/assets/vendor/venobox/venobox.min.js"></script>
-    <script src="/resources/assets/vendor/superfish/superfish.min.js"></script>
-    <script src="/resources/assets/vendor/hoverIntent/hoverIntent.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="/resources/assets/js/main.js"></script>
-
-    <!-- Custom Js -->
-    <script src="/resources/assets/js/custom.js"></script>
 
 
     <script>

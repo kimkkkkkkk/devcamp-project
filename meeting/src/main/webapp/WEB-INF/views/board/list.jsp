@@ -32,7 +32,7 @@
   
   
   <!-- custom CSS File -->
-  <link href="/resources/assets/css/socustom.css" rel="stylesheet">
+  <link href="/resources/assets/css/custom.css" rel="stylesheet">
 
 <style>
 table {
@@ -50,8 +50,22 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background: linear-gradient(45deg, #1de099, #1dc8cd);
-  opacity: 30%;
+  
+  color: gray;
+}
+
+#btn{
+ background: linear-gradient(45deg, #1de099, #1dc8cd);
+ color: white;
+ border: none;
+ padding: 12px 25px;
+ border-radius: 4px;
+ width: 100px;
+ height: 45px;
+ cursor: pointer;
+}
+#btn:hover {
+  background: pink;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -87,8 +101,7 @@ $(function(){
                 <li class="menu-has-children">
                   <a href="#">Gallery</a>
                   <ul>
-                    <li><a href="#">Male</a></li>
-                    <li><a href="#">Female</a></li>
+                    <li><a href="/profile/gallery">Member</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Cart</a></li>
@@ -119,7 +132,7 @@ $(function(){
   <script src="/resources/assets/js/main.js"></script>
 
   <!-- Custom Js -->
-  <script src="/resources/assets/js/socustom.js"></script>
+  <script src="/resources/assets/js/custom.js"></script>
 <div id="boardContent">
 <h2>게시판 목록</h2>
 	<table>
@@ -132,7 +145,7 @@ $(function(){
 		</tr>
 		<%for(Board board : boardList){ %>
 		<tr>
-			<td>Jill</td>
+			<td><%=board.getProfile_id()%></td>
 			<td><a href="/board/detail?board_id=<%=board.getBoard_id()%>"><%=board.getTitle()%></a></td>
 			<td><%=board.getProfile_id()%></td>
 			<td><%=board.getRegdate()%></td>
@@ -141,7 +154,7 @@ $(function(){
 		<%} %>
 		<tr>
 			<td colspan="5">
-				<button onClick="location.href='/board/registform';">등록</button>
+				<button id="btn" onClick="location.href='/board/registform';">Regist</button>
 			</td>
 		</tr>
 	</table>

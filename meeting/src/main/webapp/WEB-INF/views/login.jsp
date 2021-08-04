@@ -64,7 +64,7 @@
   <div class="container">
 
     <div id="logo" class="pull-left">
-      <h1><a href="index.html" class="scrollto">Ollang Ollang</a></h1>
+      <h1><a href="/admin/main" class="scrollto">Ollang Ollang</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html"><img src="/resources/assets/img/logo.png" alt=""></a> -->
     </div>
@@ -82,8 +82,8 @@
                 <li class="menu-has-children">
                   <a href="#">Gallery</a>
                   <ul>
-                    <li><a href="/profile/people">Male</a></li>
-                    <li><a href="/profile/people">Female</a></li>
+                   <li><a href="/profile/gallery">Member</a></li>
+                    
                   </ul>
                 </li>
                 <li><a href="#">Cart</a></li>

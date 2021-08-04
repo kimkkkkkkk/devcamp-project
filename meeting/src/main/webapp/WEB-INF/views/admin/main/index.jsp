@@ -63,8 +63,7 @@
                 <li class="menu-has-children">
                   <a href="#">Gallery</a>
                   <ul>
-                    <li><a href="/profile/gallery">Male</a></li>
-                    <li><a href="/profile/gallery">Female</a></li>
+                    <li><a href="/profile/gallery">Member</a></li>
                   </ul>
                 </li>
                 <li><a href="#">Cart</a></li>
