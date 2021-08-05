@@ -34,23 +34,24 @@
         <li class="menu-active"><a href="index.html">Home</a></li>
       
         <li><a href="/board/list">Board</a></li>
-        <li><a href="/login.do">Chat</a></li>
-        <a href="">Love Matching</a>
-          <ul>
-            <li><a href="/profile/registform">My Page</a></li>
+            <li><a href="/login.do">Chat</a></li>
             <li class="menu-has-children">
-            <a href="#">Gallery</a>
+              <a href="">Love Matching</a>
               <ul>
-                <li><a href="/profile/gallery">Member</a></li>
-          
+                <li><a href="/profile/registform">My Page</a></li>
+                <li class="menu-has-children">
+                  <a href="#">Gallery</a>
+                  <ul>
+                    <li><a href="/profile/gallery">Member</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Cart</a></li>
               </ul>
             </li>
-            <li><a href="#">Cart</a></li>
+            <li><a href="/profile/payment">Payment</a></li>
           </ul>
-        </li>
-        <li><a href="/profile/payment">Payment</a></li>
-      </ul>
-    </nav><!-- #nav-menu-container -->
+        </nav>
+        <!-- #nav-menu-container -->
   </div>
 </header><!-- End Header -->
 
@@ -88,7 +89,7 @@
           </div>
 
           <div class="col-50">
-        
+        	<br>
         	<label for="cname" id="cc">결제방법(신용/체크)</label>
             <input type="text" id="cname" name="c_cardtype" placeholder="신용카드">        
         

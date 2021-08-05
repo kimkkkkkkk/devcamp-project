@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body bgColor="yellow">
-이용에 불편을 드려 죄송합니다. <br>
+<img src="/resources/assets/img/error1.png">
+<br>이용에 불편을 드려 죄송합니다. <br>
 <%=e.getMessage() %>	
 </body>
 </html>
